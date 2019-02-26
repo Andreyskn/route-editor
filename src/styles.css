@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  padding: 15px;
+  min-width: 230px;
+  max-width: 380px;
+  flex: 1 0 25%;
+  background-color: #466675;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.points-list {
+  position: relative;
+  height: calc(100% - 65px);
+  overflow: auto;
+}
+
+.point {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding-right: 5px;
+  border: 1px solid #b9e3f6;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: aliceblue;
+  user-select: none;
+}
+
+.point + .point:not(.clone) {
+  margin-top: 5px;
+}
+
+.dragged {
+  opacity: 0;
+}
+
+.clone {
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  opacity: .8;
+  box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.point-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.point-text {
+  display: block;
+  font-size: 20px;
+  max-width: calc(100% - 50px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.point-btn {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .04);
+  transition: all .25s;
+}
+
+.point-btn:before, .point-btn:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background-color: #999;
+  transform-origin: 0px 0px;
+  transition: all .25s;
+}
+
+.point-btn:before {
+  transform: rotate(45deg) translate(-50%, -50%);
+}
+
+.point-btn:after {
+  transform: rotate(-45deg) translate(-50%, -50%);
+}
+
+.point-btn:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.point-btn:hover:before, .point-btn:hover:after {
+  background-color: #000000;
+}
+
+#map {
+  flex: 1 0 75%;
+  background-color: lightgray;
+}
