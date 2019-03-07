@@ -10,6 +10,7 @@ const ENTER_KEY = 13;
 class App extends Component {
 
 	_mapController = null;
+	_input = null;
 
 	state = {
 		points: {},
@@ -18,24 +19,25 @@ class App extends Component {
 
 	componentDidMount() {
 		this._mapController = new MapController('map');
+		this._input && this._mapController.setActionCallback(() => this._input.focus());
 	}
 
 	generateId = (ids) => !ids.length ? 0 : Math.max(...ids) + 1;
 
 	addPoint = (e) => {
 		const value = e.target.value;
+		if (e.keyCode !== ENTER_KEY || value === '') return;
 
-		if (e.keyCode === ENTER_KEY && value !== '') {
-			const { points, order } = this.state;
+		const { points, order } = this.state;
 
-			const newId = this.generateId(order);
-			const updatedPoints = { ...points, [newId]: value };
-			const updatedOrder = [...order, newId];
+		const newId = this.generateId(order);
+		const updatedPoints = { ...points, [newId]: value };
+		const updatedOrder = [...order, newId];
 
-			e.target.value = '';
+		e.target.value = '';
 
-			this.setState({ points: updatedPoints, order: updatedOrder });
-		}
+		this.setState({ points: updatedPoints, order: updatedOrder });
+		this._mapController.addPlacemark(newId, value, updatedOrder);
 	}
 
 	removePoint = (id) => () => {
@@ -45,20 +47,35 @@ class App extends Component {
 		const updatedOrder = order.filter(i => i !== id);
 
 		this.setState({ points, order: updatedOrder });
+		this._mapController.removePlacemark(id, updatedOrder);
 	}
 
 	changeOrder = (order) => {
 		this.setState({ order });
+		this._mapController.changeOrder(order);
 	}
 
 	render() {
 		const { points, order } = this.state;
 
+		const inputProps = {
+			type: 'text', className: 'input',
+			placeholder: 'Новая точка маршрута',
+			onKeyDown: this.addPoint, autoFocus: true,
+		}
+
+		const pointsListProps = {
+			points, order,
+			changeOrder: this.changeOrder,
+			removePoint: this.removePoint,
+			mapController: this._mapController,
+		}
+
 		return (
 			<div className='app'>
 				<div className='sidebar'>
-					<input type='text' className='input' autoFocus placeholder='Новая точка маршрута' onKeyDown={this.addPoint} />
-					<PointsList points={points} order={order} changeOrder={this.changeOrder} removePoint={this.removePoint} />
+					<input {...inputProps} ref={x => this._input = x} />
+					<PointsList {...pointsListProps} />
 				</div>
 				<div id='map' />
 			</div>
