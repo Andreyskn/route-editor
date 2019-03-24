@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Point /> Rendering renders Clone state correctly 1`] = `
+<div
+  className="point clone"
+  style={
+    Object {
+      "transform": "translate3d(0, 10px, 0)",
+    }
+  }
+>
+  <button
+    className="point-btn"
+  />
+  <div
+    className="point-overlay"
+  >
+    <span
+      className="point-text"
+    >
+      Test text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`<Point /> Rendering renders Default state correctly 1`] = `
+<div
+  className="point"
+>
+  <button
+    className="point-btn"
+  />
+  <div
+    className="point-overlay"
+  >
+    <span
+      className="point-text"
+    >
+      Test text
+    </span>
+  </div>
+</div>
+`;
+
+exports[`<Point /> Rendering renders Dragged state correctly 1`] = `
+<div
+  className="point dragged"
+>
+  <button
+    className="point-btn"
+  />
+  <div
+    className="point-overlay"
+  >
+    <span
+      className="point-text"
+    >
+      Test text
+    </span>
+  </div>
+</div>
+`;

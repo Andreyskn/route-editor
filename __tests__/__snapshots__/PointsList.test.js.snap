@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PointsList /> Rendering renders Default state correctly 1`] = `
+<PointsList
+  changeOrder={[MockFunction]}
+  order={
+    Array [
+      0,
+      2,
+      1,
+    ]
+  }
+  points={
+    Object {
+      "0": "a",
+      "1": "b",
+      "2": "c",
+    }
+  }
+  removePoint={[Function]}
+>
+  <div
+    className="points-list"
+  >
+    <div>
+      <Point
+        isDragged={false}
+        key="0"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        startDragging={[Function]}
+        text="a"
+      >
+        <div
+          className="point"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="point-text"
+            >
+              a
+            </span>
+          </div>
+        </div>
+      </Point>
+      <Point
+        isDragged={false}
+        key="2"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        startDragging={[Function]}
+        text="c"
+      >
+        <div
+          className="point"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="point-text"
+            >
+              c
+            </span>
+          </div>
+        </div>
+      </Point>
+      <Point
+        isDragged={false}
+        key="1"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        startDragging={[Function]}
+        text="b"
+      >
+        <div
+          className="point"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="point-text"
+            >
+              b
+            </span>
+          </div>
+        </div>
+      </Point>
+    </div>
+  </div>
+</PointsList>
+`;
+
+exports[`<PointsList /> Rendering renders Drag state correctly 1`] = `
+<PointsList
+  changeOrder={[MockFunction]}
+  order={
+    Array [
+      0,
+      2,
+      1,
+    ]
+  }
+  points={
+    Object {
+      "0": "a",
+      "1": "b",
+      "2": "c",
+    }
+  }
+  removePoint={[Function]}
+>
+  <div
+    className="points-list"
+  >
+    <div>
+      <Point
+        isDragged={false}
+        key="0"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        startDragging={[Function]}
+        text="a"
+      >
+        <div
+          className="point"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="point-text"
+            >
+              a
+            </span>
+          </div>
+        </div>
+      </Point>
+      <Point
+        isDragged={true}
+        key="2"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        startDragging={[Function]}
+        text="c"
+      >
+        <div
+          className="point dragged"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="point-text"
+            >
+              c
+            </span>
+          </div>
+        </div>
+      </Point>
+      <Point
+        isDragged={false}
+        key="1"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        startDragging={[Function]}
+        text="b"
+      >
+        <div
+          className="point"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="point-text"
+            >
+              b
+            </span>
+          </div>
+        </div>
+      </Point>
+      <Point
+        isClone={true}
+        offsetTop="50px"
+      >
+        <div
+          className="point clone"
+          style={
+            Object {
+              "transform": "translate3d(0, 50px, 0)",
+            }
+          }
+        >
+          <button
+            className="point-btn"
+          />
+          <div
+            className="point-overlay"
+          >
+            <span
+              className="point-text"
+            />
+          </div>
+        </div>
+      </Point>
+    </div>
+  </div>
+</PointsList>
+`;
