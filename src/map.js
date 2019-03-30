@@ -1,4 +1,4 @@
-export class MapController {
+export default class MapController {
 	constructor(containerId) {
 		if (!window.ymaps) throw new Error('Missing Map API script');
 

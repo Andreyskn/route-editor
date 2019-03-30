@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Rendering renders correctly 1`] = `
+<App>
+  <div
+    className="app"
+  >
+    <div
+      className="sidebar"
+    >
+      <input
+        autoFocus={true}
+        className="input"
+        onKeyDown={[Function]}
+        placeholder="Новая точка маршрута"
+        type="text"
+      />
+      <PointsList
+        changeOrder={[Function]}
+        mapController={null}
+        order={Array []}
+        points={Object {}}
+        removePoint={[Function]}
+      >
+        <div
+          className="points-list"
+        >
+          <div />
+        </div>
+      </PointsList>
+    </div>
+    <div
+      id="map"
+    />
+  </div>
+</App>
+`;

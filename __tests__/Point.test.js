@@ -38,12 +38,12 @@ describe('<Point />', () => {
 
 		it('calls onRemove function when remove button is clicked', () => {
 			renderPoint({ onRemove: mockFn }).find('.point-btn').simulate('click');
-			expect(mockFn).toHaveBeenCalledTimes(1);
+			expect(mockFn).toBeCalledTimes(1);
 		});
 
 		it('calls startDragging function when mousedown event is triggered on point-overlay', () => {
 			renderPoint({ startDragging: mockFn }).find('.point-overlay').simulate('mousedown');
-			expect(mockFn).toHaveBeenCalledTimes(1);
+			expect(mockFn).toBeCalledTimes(1);
 		});
 
 		it('calls onMouseOver, onMouseEnter, onMouseLeave functions when mouse is moving over container element', () => {
@@ -51,7 +51,7 @@ describe('<Point />', () => {
 				.simulate('mouseover')
 				.simulate('mouseenter')
 				.simulate('mouseleave');
-			expect(mockFn).toHaveBeenCalledTimes(3);
+			expect(mockFn).toBeCalledTimes(3);
 		})
 	});
 });
